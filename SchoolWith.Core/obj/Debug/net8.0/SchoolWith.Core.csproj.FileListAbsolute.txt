@@ -1,0 +1,13 @@
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\bin\Debug\net8.0\SchoolWith.Core.deps.json
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\bin\Debug\net8.0\SchoolWith.Core.dll
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\bin\Debug\net8.0\SchoolWith.Core.pdb
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\SchoolWith.Core.GeneratedMSBuildEditorConfig.editorconfig
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\SchoolWith.Core.AssemblyInfoInputs.cache
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\SchoolWith.Core.AssemblyInfo.cs
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\SchoolWith.Core.csproj.CoreCompileInputs.cache
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\SchoolWith.Core.dll
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\refint\SchoolWith.Core.dll
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\SchoolWith.Core.pdb
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\ref\SchoolWith.Core.dll
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\bin\Debug\net8.0\SchoolWith.Core.runtimeconfig.json
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\SchoolWith.Core.genruntimeconfig.cache

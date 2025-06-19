@@ -1,0 +1,17 @@
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\bin\Debug\net8.0\SchoolWith.EF.deps.json
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\bin\Debug\net8.0\SchoolWith.EF.runtimeconfig.json
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\bin\Debug\net8.0\SchoolWith.EF.dll
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\bin\Debug\net8.0\SchoolWith.EF.pdb
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\bin\Debug\net8.0\SchoolWith.Core.dll
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\bin\Debug\net8.0\SchoolWith.Core.pdb
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.csproj.AssemblyReference.cache
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.GeneratedMSBuildEditorConfig.editorconfig
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.AssemblyInfoInputs.cache
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.AssemblyInfo.cs
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.csproj.CoreCompileInputs.cache
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWi.E7A48183.Up2Date
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.dll
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\refint\SchoolWith.EF.dll
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.pdb
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.genruntimeconfig.cache
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\ref\SchoolWith.EF.dll
