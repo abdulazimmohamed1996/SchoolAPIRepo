@@ -11,8 +11,8 @@ namespace SchoolWith.Core.Interfaces
     public interface IStudentService : IBaseRepository<Student>
     {
         Task<ReturnStudentDto>AddStudent(AddStudentDto studentDto);
-        Task<List<Student>> GetAllStudents();
+        Task<List<AllStudentsDto>> GetAllStudents();
         Task<ReturnStudentDto> UpdateDtudent(EditStudentDto studentDto);
-        Task<string> DeleteStudent(int StudentId);
+        Task<DeletStudentDto> DeleteStudent(int StudentId);
     }
 }

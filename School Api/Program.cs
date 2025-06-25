@@ -41,7 +41,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+//cdjncd
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

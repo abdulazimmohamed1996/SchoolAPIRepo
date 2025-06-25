@@ -11,3 +11,4 @@ A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\School
 A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\ref\SchoolWith.Core.dll
 A:\DotNetProjects\School Mangment System\SchoolWith.Core\bin\Debug\net8.0\SchoolWith.Core.runtimeconfig.json
 A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\SchoolWith.Core.genruntimeconfig.cache
+A:\DotNetProjects\School Mangment System\SchoolWith.Core\obj\Debug\net8.0\SchoolWith.Core.sourcelink.json

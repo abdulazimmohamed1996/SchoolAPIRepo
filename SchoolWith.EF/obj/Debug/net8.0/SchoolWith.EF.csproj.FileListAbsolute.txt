@@ -15,3 +15,4 @@ A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\refint\S
 A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.pdb
 A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.genruntimeconfig.cache
 A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\ref\SchoolWith.EF.dll
+A:\DotNetProjects\School Mangment System\SchoolWith.EF\obj\Debug\net8.0\SchoolWith.EF.sourcelink.json

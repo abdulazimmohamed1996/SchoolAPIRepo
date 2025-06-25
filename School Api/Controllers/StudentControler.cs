@@ -44,7 +44,11 @@ namespace School_Api.Controllers
         public async Task<IActionResult> DeleteStudent(int StudentId)
         {
             var result = await _unitOfWork.Students.DeleteStudent(StudentId);
-            return Ok(result);
+            if (result.Fail!=string.Empty)
+            {
+                return BadRequest(result.Fail);
+            }
+            return Ok(result.Success);
         }
     }
 }

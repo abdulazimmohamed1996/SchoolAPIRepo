@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pada\\Downloads\\SchoolAPI-main\\SchoolAPI-main\\SchoolWith.Core\\SchoolWith.Core.csproj": {}
+    "A:\\DotNetProjects\\School Mangment System\\SchoolWith.Core\\SchoolWith.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pada\\Downloads\\SchoolAPI-main\\SchoolAPI-main\\SchoolWith.Core\\SchoolWith.Core.csproj": {
+    "A:\\DotNetProjects\\School Mangment System\\SchoolWith.Core\\SchoolWith.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pada\\Downloads\\SchoolAPI-main\\SchoolAPI-main\\SchoolWith.Core\\SchoolWith.Core.csproj",
+        "projectUniqueName": "A:\\DotNetProjects\\School Mangment System\\SchoolWith.Core\\SchoolWith.Core.csproj",
         "projectName": "SchoolWith.Core",
-        "projectPath": "C:\\Users\\pada\\Downloads\\SchoolAPI-main\\SchoolAPI-main\\SchoolWith.Core\\SchoolWith.Core.csproj",
+        "projectPath": "A:\\DotNetProjects\\School Mangment System\\SchoolWith.Core\\SchoolWith.Core.csproj",
         "packagesPath": "C:\\Users\\pada\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pada\\Downloads\\SchoolAPI-main\\SchoolAPI-main\\SchoolWith.Core\\obj\\",
+        "outputPath": "A:\\DotNetProjects\\School Mangment System\\SchoolWith.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

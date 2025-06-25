@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using SchoolWith.Core.Dtos.Students;
 using SchoolWith.Core.Interfaces;
@@ -16,10 +17,12 @@ namespace SchoolWith.EF.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IStringLocalizer<string> _localizer;
+        private readonly SchoolDbContext _context; 
         public StudentServices(SchoolDbContext context, IUnitOfWork unitOfWork, IStringLocalizer<string> localizer) : base(context)
         {
             _unitOfWork = unitOfWork;
             _localizer = localizer;
+            _context = context;
         }
 
         public async Task<ReturnStudentDto> AddStudent(AddStudentDto studentDto)
@@ -41,18 +44,24 @@ namespace SchoolWith.EF.Services
 
         }
 
-        public async Task<string> DeleteStudent(int StudentId)
+        public async Task<DeletStudentDto> DeleteStudent(int StudentId)
         {
+            var result = new DeletStudentDto();
             if (StudentId == null)
             {
-                return "Empty Id";
+
+                result.Fail = "Empty Id";
+                return result;
             }
             else
             {
                 var student = await _unitOfWork.Students.FindById(StudentId);
                 if (student == null)
                 {
-                    return string.Format(_localizer["Can't Find This Student"]); ;
+                   
+                    result.Fail = string.Format(_localizer["Can't Find This Student"]);
+                    return result;
+                    //return string.Format(_localizer["Can't Find This Student"]); ;
                 }
                 else
                 {
@@ -60,16 +69,40 @@ namespace SchoolWith.EF.Services
 
                     await _unitOfWork.Students.Delete(student);
                     await _unitOfWork.Students.CommitChanges();
-                    return string.Format(_localizer["Student Deleted Successfull"]);
+                   
+                    result.Success = string.Format(_localizer["Student Deleted Successfull"]);
+                    return result;
+                    //return string.Format(_localizer["Student Deleted Successfull"]);
                 }
             }
         }
 
-        public async Task<List<Student>> GetAllStudents()
+        public async Task<List<AllStudentsDto>> GetAllStudents()
         {
+            var output = new List<AllStudentsDto>();
             var students = await _unitOfWork.Students.GetAll();
-            return students.ToList();
+            foreach (var student in students)
+            {
+                var classModel = await _context.Classes.FirstOrDefaultAsync(x => x.Id == student.Id);
+                var studentlist = student.Adapt<AllStudentsDto>();
+                studentlist.ClassName = classModel.Name;
+                output.Add(studentlist);
+
+            }
+            return output;
         }
+            //return students.ToList();
+            //var students = await _context.Students.Include(s => s.Class).ToListAsync();
+            //var students = await _context.Students.Include(s => s.Class).ToListAsync();
+            //return students.Select(s => new AllStudentsDto
+            //{
+            //    Id = s.Id,
+            //    FullName = s.FullName,
+            //    Age = s.Age,
+            //    BirthDate = s.BirthDate,
+            //    ClassName = s.Class?.Name
+            //}).ToList();
+        //}
 
         public async Task<ReturnStudentDto> UpdateDtudent(EditStudentDto dto)
         {

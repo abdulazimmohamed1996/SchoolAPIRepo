@@ -177,3 +177,4 @@ A:\DotNetProjects\School Mangment System\School Api\bin\Debug\net8.0\zh-Hant\Mic
 A:\DotNetProjects\School Mangment System\School Api\bin\Debug\net8.0\Mapster.dll
 A:\DotNetProjects\School Mangment System\School Api\bin\Debug\net8.0\Mapster.Core.dll
 A:\DotNetProjects\School Mangment System\School Api\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+A:\DotNetProjects\School Mangment System\School Api\obj\Debug\net8.0\School Api.sourcelink.json
