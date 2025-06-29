@@ -9,6 +9,7 @@ namespace SchoolWith.Core.Interfaces
     public interface IUnitOfWork : IDisposable
     {
         IStudentService Students { get; }
+        IClassService Classes { get; }
         Task<int> Complete();
     }
 }

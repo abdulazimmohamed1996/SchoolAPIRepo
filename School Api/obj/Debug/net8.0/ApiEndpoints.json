@@ -1,5 +1,63 @@
 [
   {
+    "ContainingType": "School_Api.Controllers.Class",
+    "Method": "addClass",
+    "RelativePath": "api/Class/AddClass",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addClassDto",
+        "Type": "SchoolWith.Core.Dtos.Classes.AddClassDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School_Api.Controllers.Class",
+    "Method": "DeleteClass",
+    "RelativePath": "api/Class/DeleteClass",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ClassId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School_Api.Controllers.Class",
+    "Method": "getAllClasses",
+    "RelativePath": "api/Class/GetAllClasses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School_Api.Controllers.Class",
+    "Method": "EditClass",
+    "RelativePath": "api/Class/UpdateClass",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SchoolWith.Core.Dtos.Classes.EditClassDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "School_Api.Controllers.StudentControler",
     "Method": "AddStudent",
     "RelativePath": "api/StudentControler/AddStudent",

@@ -1,4 +1,5 @@
-﻿using SchoolWith.Core.Dtos.Students;
+﻿using SchoolWith.Core.Dtos.SharedDtos;
+using SchoolWith.Core.Dtos.Students;
 using SchoolWith.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,6 @@ namespace SchoolWith.Core.Interfaces
         Task<ReturnStudentDto>AddStudent(AddStudentDto studentDto);
         Task<List<AllStudentsDto>> GetAllStudents();
         Task<ReturnStudentDto> UpdateDtudent(EditStudentDto studentDto);
-        Task<DeletStudentDto> DeleteStudent(int StudentId);
+        Task<DeletDto> DeleteStudent(int StudentId);
     }
 }

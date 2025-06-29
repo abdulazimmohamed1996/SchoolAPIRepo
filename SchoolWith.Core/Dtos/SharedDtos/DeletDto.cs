@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolWith.Core.Dtos.Students
+namespace SchoolWith.Core.Dtos.SharedDtos
 {
-    public class DeletStudentDto
+    public class DeletDto
     {
         public string? Fail { get; set; } = string.Empty;
         public string? Success { get; set; } = string.Empty;

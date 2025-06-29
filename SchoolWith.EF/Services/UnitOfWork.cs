@@ -14,10 +14,13 @@ namespace SchoolWith.EF.Services
         private readonly SchoolDbContext _context;
         public IStudentService Students { get; private set; }
 
+        public IClassService Classes { get; private set; }
+
         public UnitOfWork(SchoolDbContext context, IStringLocalizer<string> localizer)
         {
             _context = context;
             Students = new StudentServices(_context, this, localizer);
+            Classes = new ClassServices(_context, this,localizer);
         }
 
         public async Task<int> Complete()

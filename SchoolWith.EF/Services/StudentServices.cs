@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
+using SchoolWith.Core.Dtos.SharedDtos;
 using SchoolWith.Core.Dtos.Students;
 using SchoolWith.Core.Interfaces;
 using SchoolWith.Core.Models;
@@ -44,9 +45,9 @@ namespace SchoolWith.EF.Services
 
         }
 
-        public async Task<DeletStudentDto> DeleteStudent(int StudentId)
+        public async Task<DeletDto> DeleteStudent(int StudentId)
         {
-            var result = new DeletStudentDto();
+            var result = new DeletDto();
             if (StudentId == null)
             {
 
@@ -80,30 +81,27 @@ namespace SchoolWith.EF.Services
         public async Task<List<AllStudentsDto>> GetAllStudents()
         {
             var output = new List<AllStudentsDto>();
-            var students = await _unitOfWork.Students.GetAll();
-            foreach (var student in students)
-            {
-                var classModel = await _context.Classes.FirstOrDefaultAsync(x => x.Id == student.Id);
-                var studentlist = student.Adapt<AllStudentsDto>();
-                studentlist.ClassName = classModel.Name;
-                output.Add(studentlist);
-
-            }
-            return output;
-        }
-            //return students.ToList();
-            //var students = await _context.Students.Include(s => s.Class).ToListAsync();
-            //var students = await _context.Students.Include(s => s.Class).ToListAsync();
-            //return students.Select(s => new AllStudentsDto
+            //var students = await _unitOfWork.Students.GetAll();
+            //foreach (var student in students)
             //{
-            //    Id = s.Id,
-            //    FullName = s.FullName,
-            //    Age = s.Age,
-            //    BirthDate = s.BirthDate,
-            //    ClassName = s.Class?.Name
-            //}).ToList();
-        //}
+            //    var classModel = await _context.Classes.FirstOrDefaultAsync(x => x.Id == student.Id);
+            //    var studentlist = student.Adapt<AllStudentsDto>();
+            //    studentlist.ClassName = classModel.Name;
+            //    output.Add(studentlist);
 
+            //}
+            //return output;
+
+            var students = await _context.Students.Include(s => s.Class).ToListAsync();
+            return students.Select(s => new AllStudentsDto
+            {
+                Id = s.Id,
+                FullName = s.FullName,
+                Age = s.Age,
+                BirthDate = s.BirthDate,
+                ClassName = s.Class?.Name
+            }).ToList();
+        }
         public async Task<ReturnStudentDto> UpdateDtudent(EditStudentDto dto)
         {
             var output = new ReturnStudentDto();
