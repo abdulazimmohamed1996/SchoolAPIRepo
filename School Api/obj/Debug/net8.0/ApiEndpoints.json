@@ -116,6 +116,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "School_Api.Controllers.TeacherController",
+    "Method": "AddTeacher",
+    "RelativePath": "api/Teacher/AddTeacher",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addteacherDto",
+        "Type": "SchoolWith.Core.Dtos.Teachers.addteacherDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School_Api.Controllers.TeacherController",
+    "Method": "DeleteStudent",
+    "RelativePath": "api/Teacher/DeleteTeacher",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teacherId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School_Api.Controllers.TeacherController",
+    "Method": "GetAllTeacher",
+    "RelativePath": "api/Teacher/GetAllTeacher",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School_Api.Controllers.TeacherController",
+    "Method": "UpdateStudent",
+    "RelativePath": "api/Teacher/UpdateTeacher",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "editTeacherDto",
+        "Type": "SchoolWith.Core.Dtos.Teachers.EditTeacherDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "School_Api.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
