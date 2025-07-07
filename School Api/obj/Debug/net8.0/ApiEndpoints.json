@@ -118,7 +118,7 @@
   {
     "ContainingType": "School_Api.Controllers.TeacherController",
     "Method": "AddTeacher",
-    "RelativePath": "api/Teacher/AddTeacher",
+    "RelativePath": "api/Teacher",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -129,7 +129,8 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [],
+    "EndpointName": "AddTeacher"
   },
   {
     "ContainingType": "School_Api.Controllers.TeacherController",

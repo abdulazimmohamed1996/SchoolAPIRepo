@@ -197,11 +197,12 @@
         }
       }
     },
-    "/api/Teacher/AddTeacher": {
+    "/api/Teacher": {
       "post": {
         "tags": [
           "Teacher"
         ],
+        "operationId": "AddTeacher",
         "requestBody": {
           "content": {
             "application/json": {

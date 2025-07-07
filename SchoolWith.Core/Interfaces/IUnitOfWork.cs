@@ -11,6 +11,7 @@ namespace SchoolWith.Core.Interfaces
         IStudentService Students { get; }
         IClassService Classes { get; }
         ITeacherServices Teachers { get; }
+        ISupjectServices Supjects { get; }
         Task<int> Complete();
     }
 }

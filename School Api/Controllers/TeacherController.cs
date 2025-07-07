@@ -15,7 +15,7 @@ namespace School_Api.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-        [HttpPost("AddTeacher")]
+        [HttpPost(Name = "AddTeacher")]
         public async Task<IActionResult> AddTeacher(addteacherDto addteacherDto)
         {
             var result = await _unitOfWork.Teachers.AddTeacher(addteacherDto);

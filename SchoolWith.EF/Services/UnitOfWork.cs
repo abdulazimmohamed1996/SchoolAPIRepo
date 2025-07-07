@@ -18,12 +18,15 @@ namespace SchoolWith.EF.Services
 
         public ITeacherServices Teachers { get; private set; }
 
+        public ISupjectServices Supjects { get; private set; }
+
         public UnitOfWork(SchoolDbContext context, IStringLocalizer<string> localizer)
         {
             _context = context;
             Students = new StudentServices(_context, this, localizer);
             Classes = new ClassServices(_context, this,localizer);
             Teachers = new TeacherServices(_context, this, localizer);
+            Supjects = new SubjectServices(_context, this, localizer);
 
         }
 
