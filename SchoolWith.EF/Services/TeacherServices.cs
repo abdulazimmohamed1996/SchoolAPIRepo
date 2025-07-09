@@ -1,6 +1,8 @@
 ﻿using Mapster;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using SchoolWith.Core.Dtos.SharedDtos;
+using SchoolWith.Core.Dtos.Subjects;
 using SchoolWith.Core.Dtos.Teachers;
 using SchoolWith.Core.Interfaces;
 using SchoolWith.Core.Models;
@@ -96,10 +98,29 @@ namespace SchoolWith.EF.Services
 
         }
 
-        public async Task<List<Teacher>> getAllTeachers()
+        public async Task<List<TeacherDto>> getAllTeachers()
         {
-            var allTeachers=await _unitOfWork.Teachers.GetAll();
-            return allTeachers.ToList();
+            var teachers = await _unitOfWork.Teachers.GetAllTeachersWithSubjectsAsync();
+
+            var teacherDtos = teachers.Select(t => new TeacherDto
+            {
+                Id = t.Id,
+                Name = t.Name,
+                Subjects = t.Subjects.Select(s => new SubjectDto
+                {
+                    Id = s.Id,
+                    Name = s.Name
+                }).ToList()
+            }).ToList();
+
+            return teacherDtos;
+        }
+
+        public async Task<List<Teacher>> GetAllTeachersWithSubjectsAsync()
+        {
+            return await _context.Teachers
+                                 .Include(t => t.Subjects)
+                                 .ToListAsync();
         }
     }
 }

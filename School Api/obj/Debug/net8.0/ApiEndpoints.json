@@ -116,9 +116,25 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "School_Api.Controllers.SupjectController",
+    "Method": "AddSupject",
+    "RelativePath": "api/Supject/AddSupject",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addSubjectDto",
+        "Type": "SchoolWith.Core.Dtos.Subjects.AddSubjectDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "School_Api.Controllers.TeacherController",
     "Method": "AddTeacher",
-    "RelativePath": "api/Teacher",
+    "RelativePath": "api/Teacher/AddTeacher",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -129,8 +145,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [],
-    "EndpointName": "AddTeacher"
+    "ReturnTypes": []
   },
   {
     "ContainingType": "School_Api.Controllers.TeacherController",
@@ -150,13 +165,23 @@
   },
   {
     "ContainingType": "School_Api.Controllers.TeacherController",
-    "Method": "GetAllTeacher",
+    "Method": "GetAllTeachers",
     "RelativePath": "api/Teacher/GetAllTeacher",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SchoolWith.Core.Dtos.Teachers.TeacherDto, SchoolWith.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "School_Api.Controllers.TeacherController",

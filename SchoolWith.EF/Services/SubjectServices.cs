@@ -34,7 +34,7 @@ namespace SchoolWith.EF.Services
             else
             {
                 var addedSubject = addSubjectDto.Adapt<Subject>();
-                await _unitOfWork.Supjects.AddSubject(addSubjectDto);
+                await _unitOfWork.Supjects.Add(addedSubject);
                 await _unitOfWork.Supjects.CommitChanges();
                 output.Subject = addedSubject;
             }

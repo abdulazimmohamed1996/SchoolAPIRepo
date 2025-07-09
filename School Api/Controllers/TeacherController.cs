@@ -15,7 +15,7 @@ namespace School_Api.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-        [HttpPost(Name = "AddTeacher")]
+        [HttpPost("AddTeacher")]
         public async Task<IActionResult> AddTeacher(addteacherDto addteacherDto)
         {
             var result = await _unitOfWork.Teachers.AddTeacher(addteacherDto);
@@ -26,7 +26,7 @@ namespace School_Api.Controllers
             return Ok(result.Teacher);
         }
         [HttpGet("GetAllTeacher")]
-        public async Task<IActionResult> GetAllTeacher()
+        public async Task<ActionResult<List<TeacherDto>>> GetAllTeachers()
         {
             var result = await _unitOfWork.Teachers.getAllTeachers();
             return Ok(result);

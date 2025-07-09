@@ -12,7 +12,8 @@ namespace SchoolWith.Core.Interfaces
     public interface ITeacherServices : IBaseRepository<Teacher>
     {
         Task<ReturnTeacherDto> AddTeacher(addteacherDto addteacherDto);
-        Task<List<Teacher>> getAllTeachers();
+        Task<List<TeacherDto>> getAllTeachers();
+        Task<List<Teacher>> GetAllTeachersWithSubjectsAsync();
         Task<ReturnTeacherDto> editTeacher(EditTeacherDto editTeacherDto);
         Task<DeletDto> deleteTeacher(int teacherId);
         
