@@ -24,5 +24,31 @@ namespace School_Api.Controllers
             }
             return Ok(result.Subject);
         }
+        [HttpGet("GetAllSubjects")]
+        public async Task<IActionResult> getAllSupjects()
+        {
+            var AllSupjects = await _unitOfWork.Supjects.getAllSubjects();
+            return Ok(AllSupjects);
+        }
+        [HttpPut("EditSubject")]
+        public async Task<IActionResult> UpdateSupject(EditSupjectDto editSupjectDto)
+        {
+            var result = await _unitOfWork.Supjects.EditSupject(editSupjectDto);
+            if(result.Message != string.Empty)
+            {
+                return BadRequest(result.Message);
+            }
+            return Ok(result.Subject);
+        }
+        [HttpDelete("DeleteSupject")]
+        public async Task<IActionResult> DeleteSupject(int supjectId)
+        {
+            var result = await _unitOfWork.Supjects.DeletSupject(supjectId);
+            if(result.Fail != string.Empty)
+            {
+                return BadRequest(result.Fail);
+            }
+            return Ok(result.Success);
+        }
     }
 }

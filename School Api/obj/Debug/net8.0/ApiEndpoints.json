@@ -132,6 +132,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "School_Api.Controllers.SupjectController",
+    "Method": "DeleteSupject",
+    "RelativePath": "api/Supject/DeleteSupject",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "supjectId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School_Api.Controllers.SupjectController",
+    "Method": "UpdateSupject",
+    "RelativePath": "api/Supject/EditSubject",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "editSupjectDto",
+        "Type": "SchoolWith.Core.Dtos.Subjects.EditSupjectDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "School_Api.Controllers.SupjectController",
+    "Method": "getAllSupjects",
+    "RelativePath": "api/Supject/GetAllSubjects",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "School_Api.Controllers.TeacherController",
     "Method": "AddTeacher",
     "RelativePath": "api/Teacher/AddTeacher",

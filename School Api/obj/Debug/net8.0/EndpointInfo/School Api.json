@@ -228,6 +228,71 @@
         }
       }
     },
+    "/api/Supject/GetAllSubjects": {
+      "get": {
+        "tags": [
+          "Supject"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Supject/EditSubject": {
+      "put": {
+        "tags": [
+          "Supject"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditSupjectDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditSupjectDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditSupjectDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Supject/DeleteSupject": {
+      "delete": {
+        "tags": [
+          "Supject"
+        ],
+        "parameters": [
+          {
+            "name": "supjectId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Teacher/AddTeacher": {
       "post": {
         "tags": [
@@ -472,6 +537,24 @@
             "format": "date-time"
           },
           "classId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EditSupjectDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "teacherId": {
             "type": "integer",
             "format": "int32"
           }
