@@ -242,6 +242,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "School_Api.Controllers.userController",
+    "Method": "AddUser",
+    "RelativePath": "api/user/AddUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRegister",
+        "Type": "SchoolWith.Core.Dtos.Users.AddUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "School_Api.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
