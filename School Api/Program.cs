@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SchoolWith.Core.Interfaces;
 using SchoolWith.Core.Models;
+using SchoolWith.Core.Seeds;
 using SchoolWith.EF.Context;
 using SchoolWith.EF.Services;
 using System.Text;
@@ -66,6 +67,7 @@ builder.Services.AddLocalization();
 
 
 var app = builder.Build();
+
 //  Use CORS
 app.UseCors("AllowAll");
 
@@ -82,5 +84,14 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var defaultRole = new DefaultRole(); // create an instance
+    await DefaultRole.seedsRoleAsync(roleManager); // call the method
+}
+
+
 
 app.Run();

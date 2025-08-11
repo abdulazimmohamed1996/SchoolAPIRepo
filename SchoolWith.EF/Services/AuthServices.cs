@@ -63,12 +63,20 @@ namespace SchoolWith.EF.Services
                         IsAuth = true,
                         Name = user.UserName,
                         Massage =
-                        string.Format(_localizer["User in Role {} Created successfully"], userRegister.Role.ToString()),
+                        string.Format(_localizer["User in Role {0} Created successfully"], userRegister.Role.ToString()),
                         //Token = new JwtSecurityTokenHandler().WriteToken(token),
                         //ExpiresOn = token.ValidTo
                     };
                 }
-                authReturn.Massage = result.Errors.FirstOrDefault().Description;
+                if (result != null && result.Errors.Any())
+{
+    authReturn.Massage = result.Errors.First().Description;
+}
+else
+{
+    authReturn.Massage = "Unknown error occurred";
+}
+                //authReturn.Massage = result.Errors.FirstOrDefault().Description;
             }
             return authReturn;
         }
