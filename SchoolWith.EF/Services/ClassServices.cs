@@ -1,8 +1,11 @@
 ﻿using Mapster;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using SchoolWith.Core.Dtos.Classes;
 using SchoolWith.Core.Dtos.SharedDtos;
 using SchoolWith.Core.Dtos.Students;
+using SchoolWith.Core.Dtos.Subjects;
+using SchoolWith.Core.Dtos.Teachers;
 using SchoolWith.Core.Interfaces;
 using SchoolWith.Core.Models;
 using SchoolWith.EF.Context;
@@ -44,10 +47,13 @@ namespace SchoolWith.EF.Services
             return output;
         }
 
-        public async Task<List<Class>> getAllClasses()
+        public async Task<List<Class>> getAllClasseswithstudents()
         {
-            var allClasses = await _unitOfWork.Classes.GetAll();
-            return allClasses.ToList();      
+            //var allClasses = await _unitOfWork.Classes.GetAll();
+            //return allClasses.ToList();
+            return await _context.Classes
+                                .Include(t => t.Students)
+                                .ToListAsync();
         }
 
         public async Task<ReturnClassDto> updateClass(EditClassDto editClassDto)
@@ -97,6 +103,26 @@ namespace SchoolWith.EF.Services
                     //return string.Format(_localizer["Student Deleted Successfull"]);
                 }
             }
+        }
+
+        public async Task<List<ClassWithStudents>> getAllClasses()
+        {
+            var Students = await _unitOfWork.Classes.getAllClasseswithstudents();
+
+            var teacherDtos = Students.Select(t => new ClassWithStudents
+            {
+                Id = t.Id,
+                Name = t.Name,
+                Students = t.Students.Select(s => new AllStudentsDto
+                {
+                    Id = s.Id,
+                    FullName = s.FullName,
+                    Age = s.Age,
+                    BirthDate = s.BirthDate,
+                }).ToList()
+            }).ToList();
+
+            return teacherDtos;
         }
     }
 }

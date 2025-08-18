@@ -13,7 +13,9 @@ namespace SchoolWith.Core.Interfaces
     public interface IClassService : IBaseRepository<Class>
     {
         Task<ReturnClassDto>addClass(AddClassDto addClassDto);
-        Task<List<Class>> getAllClasses();
+        Task<List<Class>> getAllClasseswithstudents();
+        Task<List<ClassWithStudents>> getAllClasses();
+
         Task<ReturnClassDto> updateClass(EditClassDto editClassDto);
         Task<DeletDto> deleteClass(int classId);
 
