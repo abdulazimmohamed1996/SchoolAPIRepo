@@ -258,6 +258,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "School_Api.Controllers.userController",
+    "Method": "editUser",
+    "RelativePath": "api/user/EditUser",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "editUserDto",
+        "Type": "SchoolWith.Core.Dtos.Users.EditUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "School_Api.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

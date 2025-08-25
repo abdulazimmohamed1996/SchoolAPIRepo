@@ -29,5 +29,13 @@ namespace School_Api.Controllers
                 return BadRequest(user.Massage);
             return Ok(user);
         }
+        [HttpPut("EditUser")]
+        public async Task<IActionResult> editUser(EditUserDto editUserDto)
+        {
+            var user = await _authService.EditUser(editUserDto);
+            if (!user.IsAuth)
+                return BadRequest(user.Massage);
+            return Ok(user);
+        }
     }
 }

@@ -69,21 +69,101 @@ namespace SchoolWith.EF.Services
                     };
                 }
                 if (result != null && result.Errors.Any())
-{
-    authReturn.Massage = result.Errors.First().Description;
-}
-else
-{
-    authReturn.Massage = "Unknown error occurred";
-}
+                {
+                    authReturn.Massage = result.Errors.First().Description;
+                }
+                else
+                {
+                    authReturn.Massage = "Unknown error occurred";
+                }
                 //authReturn.Massage = result.Errors.FirstOrDefault().Description;
             }
             return authReturn;
         }
 
-        public Task<ReturnAuth> EditUser(EditUserDto userDto)
+        public async Task<ReturnAuth> EditUser(EditUserDto userDto)
         {
-            throw new NotImplementedException();
+            var output = new ReturnAuth();
+            // ✅ البحث عن المستخدم بالـ Id
+            var checkUser = await _userManager.FindByIdAsync(userDto.Id);
+            if (checkUser == null){
+                output.Massage = "No user found with this Id!";
+                return output;
+            }
+            // ✅ جلب الأدوار الحالية للمستخدم
+            var userRoles = await _userManager.GetRolesAsync(checkUser);
+            // ✅ التحقق إذا كانت البيانات لم تتغير
+            bool isSameData =
+                userDto.Email == checkUser.Email &&
+                userDto.FirstName == checkUser.FirstName &&
+                userDto.LastName == checkUser.LastName &&
+                userDto.UserName == checkUser.UserName &&
+                userDto.IsLocked == checkUser.IsLocked &&
+                userDto.PhoneNumber == checkUser.PhoneNumber &&
+                userDto.LockDate == checkUser.LockDate;
+            if (isSameData) {
+                output.Massage = "No changes are found";
+                return output;
+            }
+            // ✅ التحقق من الإيميل لو اتغير
+            if (userDto.Email != checkUser.Email)
+            {
+                if (await _userManager.FindByEmailAsync(userDto.Email) != null)
+                {
+                    output.Massage = "This Email already exists";
+                    return output;
+                }
+            }
+
+            // ✅ التحقق من اسم المستخدم لو اتغير
+            if (userDto.UserName != checkUser.UserName)
+            {
+                if (await _userManager.FindByNameAsync(userDto.UserName) != null)
+                {
+                    output.Massage = "This UserName already exists";
+                    return output;
+                }
+            }
+
+            // ✅ التحقق من رقم الهاتف لو اتغير
+            if (userDto.PhoneNumber != checkUser.PhoneNumber)
+            {
+                bool phoneExists = await _context.Users
+                    .AnyAsync(u => u.PhoneNumber == userDto.PhoneNumber && u.Id != userDto.Id);
+
+                if (phoneExists)
+                {
+                    output.Massage = "This PhoneNumber already exists";
+                    return output;
+                }
+            }
+            if (output.Massage == string.Empty)
+            {
+                //Error while saving because using UserManager With UserService !!
+
+                checkUser.Email = userDto.Email;
+                checkUser.UserName = userDto.UserName;
+                checkUser.FirstName = userDto.FirstName;
+                checkUser.IsLocked = userDto.IsLocked;
+                checkUser.LastName = userDto.LastName;
+                checkUser.LockDate = userDto.LockDate;
+                checkUser.PhoneNumber = userDto.PhoneNumber;
+                //if (!userRoles.Any(r => r == userDto.Role.ToString()))
+                //{
+                //    await _userManager.RemoveFromRoleAsync(checkUser, userRoles.First());
+                //    await _userManager.AddToRoleAsync(checkUser, userDto.Role.ToString());
+                //}
+                await _userManager.UpdateAsync(checkUser);
+                //var token = await CreateJwtToken(checkUser);
+                output.IsAuth = true;
+                output.Email = checkUser.Email;
+                output.Id = checkUser.Id;
+                output.Name = checkUser.UserName;
+                //output.Token = new JwtSecurityTokenHandler().WriteToken(token);
+                //output.ExpiresOn = token.ValidTo;
+            }
+            return output;
+
         }
     }
 }
